@@ -6,7 +6,8 @@ const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const DATA_DIR = path.join(__dirname, 'data');
+// Allow overriding data directory via env var so platforms (Northflank) can mount a persistent volume there
+const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, 'data');
 const MESSAGES_FILE = path.join(DATA_DIR, 'messages.json');
 const STORAGE_LIMIT_BYTES = 500 * 1024 * 1024; // 500 MB
 const TRIM_COUNT = 100;

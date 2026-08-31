@@ -78,9 +78,22 @@ if (themeToggle) {
     const form = document.getElementById('chat-form');
     const input = document.getElementById('chat-input');
 
-    async function loadMessages(){
+    // load api base from config.json (so static site can be pointed to deployed server)
+    async function getApiBase(){
         try{
-            const res = await fetch(API_BASE);
+            const r = await fetch('/config.json');
+            if (!r.ok) throw new Error('no config');
+            const j = await r.json();
+            return j.apiBase || API_BASE;
+        }catch(e){
+            return API_BASE;
+        }
+    }
+
+    async function loadMessages(){
+        const base = await getApiBase();
+        try{
+            const res = await fetch(base);
             if (!res.ok) throw new Error('Network');
             return await res.json();
         }catch(e){

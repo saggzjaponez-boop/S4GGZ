@@ -4,7 +4,15 @@
   "description": "Static site with chat server for S4GGZ",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saggzjaponez-boop/S4GGZ.git"
   },
   "dependencies": {
     "cors": "^2.8.5",
