@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eff7ff;
+    color: #1a1a1a;
+}
+
+.page-header {
+    padding: 1rem;
+    background: #007bff;
+}
+
+.page-header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.page-content {
+    padding: 2rem;
+}
